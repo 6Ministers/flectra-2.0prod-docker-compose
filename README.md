@@ -28,6 +28,29 @@ $ sudo apt-get install curl
 $ sudo yum install curl
 ```
 
+Go to the catalog
+
+``` bash
+cd flectra2.0
+```
+
+To change the domain in the `Caddyfile` to your own
+
+``` bash
+https://flectra-domain.com:443 {
+    reverse_proxy 127.0.0.1:7073
+  encode zstd gzip
+...
+}
+```
+
+Run Flectra:
+
+``` bash
+docker-compose up -d
+```
+
+
 ## Usage
 
 Start the container:
