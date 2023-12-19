@@ -107,11 +107,18 @@ docker-compose up -d
 docker-compose restart
 ```
 
+**Restart Flectra**:
+
+``` bash
+sudo docker-compose down && sudo docker-compose up -d
+```
+
 **Stop Flectra**:
 
 ``` bash
 docker-compose down
 ```
+
 
 ## docker-compose.yml
 
