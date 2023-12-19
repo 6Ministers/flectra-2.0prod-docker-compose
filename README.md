@@ -17,7 +17,7 @@ curl -s https://raw.githubusercontent.com/6Ministers/flectra-2.0prod-docker-comp
 Download Flectra 2.0 instance:
 
 ``` bash
-curl -s https://raw.githubusercontent.com/6Ministers/flectra-2.0prod-docker-compose/master/run.sh | sudo bash -s flectra2.0
+curl -s https://raw.githubusercontent.com/6Ministers/flectra-2.0prod-docker-compose/master/download.sh | sudo bash -s flectra2.0
 ```
 
 If `curl` is not found, install it:
