@@ -2,6 +2,8 @@
 
 ## Quick Installation
 
+**Before starting the instance, direct the domain to the ip of the server where Flectra will be installed!**
+
 Run for Ubuntu 22.04
 
 ``` bash
