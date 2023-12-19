@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  caddy:
+    container_name: caddy   
+    image: caddy:alpine
+    restart: always
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./certs:/certs
+      - ./config:/config
+      - ./data:/data
+      - ./sites:/srv
+    network_mode: "host"
+
+  db:
+    container_name: flectra-psql
+    image: postgres:14
+    restart: always             # run as a service
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=flectra
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    volumes:
+        - ./postgresql/db:/var/lib/postgresql/data:rw
+    hostname: flectradb
+
+  flectra:
+    container_name: flectra2.0
+    image: flectrahq/flectra:2.0
+    user: flectra
+    restart: always             # run as a service 
+    ports:
+      - 127.0.0.1:7073:7073
+      - 127.0.0.1:7072:7072     # live chat
+    command: --
+    environment:
+      - HOST=db
+      - PORT=5432
+      - USER=flectra
+      - PASSWORD=password
+    volumes:
+      - ./etc/config:/etc/flectra:rw
+      - ./etc/addons:/mnt/extra-addons:ro
+      - ./etc/data:/var/lib/flectra:rw
+      - ./etc/logs:/var/log/flectra:rw
+      - ./etc/geoip-db:/usr/share/GeoIP:ro
+      # - ./etc/timezone:/etc/timezone:ro
+      # - ./etc/localtime:/etc/localtime:ro
+      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
+    depends_on:
+      - db
+    hostname: Flectra

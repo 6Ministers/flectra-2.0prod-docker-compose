@@ -1,0 +1,38 @@
+https://flectra-domain.com:443 {
+    reverse_proxy 127.0.0.1:7073
+  encode zstd gzip
+
+
+	# Secure headers, all from .htaccess except Permissions-Policy, STS and X-Powered-By
+	header {
+		Strict-Transport-Security max-age=31536000
+		Permissions-Policy interest-cohort=()
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy no-referrer
+		X-XSS-Protection "1; mode=block"
+		X-Permitted-Cross-Domain-Policies none
+		X-Robots-Tag "noindex, nofollow"
+		-X-Powered-By
+}
+
+	# From .htaccess, set cache for versioned static files (cache-busting)
+	@immutable {
+		path *.css *.js *.mjs *.svg *.gif *.png *.jpg *.ico *.wasm *.tflite
+		query v=*
+	}
+	header @immutable Cache-Control "max-age=15778463, immutable"
+
+	# From .htaccess, set cache for normal static files
+	@static {
+		path *.css *.js *.mjs *.svg *.gif *.png *.jpg *.ico *.wasm *.tflite
+		not query v=*
+	}
+	header @static Cache-Control "max-age=15778463"
+
+	# From .htaccess, cache fonts for 1 week
+	@woff2 path *.woff2
+	header @woff2 Cache-Control "max-age=604800"
+
+	file_server
+}
