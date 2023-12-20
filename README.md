@@ -4,7 +4,19 @@
 -------------------------------------
 **Before starting the instance, direct the domain to the IP of the server where Flectra will be installed!**
 
-**The following will be installed: FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL certificate with automatic update of Let's Encrypt**
+**The following will be installed: FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL certificate with automatic update of Let's Encrypt.**
+
+**The following directories will be mapped in the volumes:**
+
+``` bash
+      - ./etc/config:/etc/flectra:rw
+      - ./etc/addons:/mnt/extra-addons:ro
+      - ./etc/data:/var/lib/flectra:rw
+      - ./etc/logs:/var/log/flectra:rw
+      - ./etc/geoip-db:/usr/share/GeoIP:ro
+      # - ./etc/timezone:/etc/timezone:ro
+      # - ./etc/localtime:/etc/localtime:ro
+```
 
 ## Quick Installation
 
