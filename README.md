@@ -1,5 +1,4 @@
-# Installing FlectraHQ 2.0 with one command 
-# (Production FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL).
+# Installing FlectraHQ 2.0 with one command (Production FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL).
 
 ## Quick Installation
 
