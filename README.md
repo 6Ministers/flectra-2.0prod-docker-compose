@@ -1,6 +1,6 @@
 # Installing FlectraHQ 2.0 with one command (Production FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL).
 
-**Recommended VPS: 2 CPU, 2 RAM, 10 Gb**
+**Recommended VPS: 2 CPUs, 2 RAM, 10 Gb (or more)** 
 -------------------------------------
 **Before starting the instance, direct the domain to the IP of the server where Flectra will be installed!**
 
