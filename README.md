@@ -2,9 +2,9 @@
 
 ## Quick Installation
 
-**Before starting the instance, direct the domain to the ip of the server where Flectra will be installed!**
+**Before starting the instance, direct the domain to the IP of the server where Flectra will be installed!**
 
-#**The following will be installed: FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL certificate with automatic update of Let's Encrypt**
+**The following will be installed: FlectraHQ 2.0, PostgreSQL 14, Caddy web server, SSL certificate with automatic update of Let's Encrypt**
 
 
 Run for Ubuntu 22.04
