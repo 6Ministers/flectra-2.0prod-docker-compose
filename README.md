@@ -5,7 +5,7 @@
 **Before starting the instance, direct the domain to the ip of the server where Flectra will be installed!**
 
 **During installation, Vectra 2.0, PostgreSQL 14, Caddy web server, SSL certificate with automatic update of Let's Encrypt will be installed**
-==============================================================================================================================================
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Run for Ubuntu 22.04
 
