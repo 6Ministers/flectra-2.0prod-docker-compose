@@ -1,6 +1,7 @@
 https://flectra-domain.com:443 {
     reverse_proxy 127.0.0.1:7073
-  encode zstd gzip
+    encode zstd gzip
+    file_server
 
 	# Secure headers, all from .htaccess except Permissions-Policy, STS and X-Powered-By
 	header {
@@ -15,5 +16,4 @@ https://flectra-domain.com:443 {
 		-X-Powered-By
 }
 
-	file_server
 }
