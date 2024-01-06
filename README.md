@@ -125,6 +125,16 @@ sudo docker-compose down && sudo docker-compose up -d
 docker-compose down
 ```
 
+**Show running containers**:
+``` bash
+docker ps
+```
+
+**Enter the flectra2.0 container**:
+``` bash
+docker exec -it flectra2.0 bash
+```
+
 
 ## docker-compose.yml
 
