@@ -35,6 +35,7 @@ services:
     ports:
       - 127.0.0.1:7073:7073
       - 127.0.0.1:7072:7072     # live chat
+    tty: true
     command: --
     environment:
       - HOST=db
