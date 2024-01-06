@@ -95,7 +95,7 @@ The **addons/** folder contains custom addons. Just put your custom addons if yo
 
 ## Flectra configuration & log
 
-* To change Flectra configuration, edit file: **etc/flectra.conf**.
+* To change Flectra configuration, edit file: **etc/config/flectra.conf**.
 * Log file: **etc/flectra-server.log**
   
 
